@@ -1,0 +1,94 @@
+# Agent Behavior — AIPM-Orbit
+
+For any AI agent (Codex / Cursor / general assistants) working within this Obsidian vault. Build, organize, and evolve product work through **AIPM-Orbit**.
+
+> Claude Code 专属规则参见 [CLAUDE.md](./CLAUDE.md)，内容大致一致；本文件为通用 Agent 入口。
+
+## Vault 作用域
+
+本 vault 服务于 **{{tenant 名}}** 企业 tenant。未来新客户起独立 vault，不在本 vault 内嵌套客户层级。
+
+> 派生新 vault 后，需将本行 `{{tenant 名}}` 占位符替换为实际客户名。详见 [INIT.md](./INIT.md)。
+
+## 顶层结构
+
+完整说明见 [README.md](./README.md) 和 [[00_AIPM-Orbit整体说明]]。
+
+| 路径 | 用途 |
+|---|---|
+| `00_!看板.md` | 全局 dataview 看板 |
+| `00_基线资料/` | 过去向：历史资产 / 现行规则（按 CPxx 子目录组织）|
+| `00_想法&诉求池/` | 未来向：新想法 / 诉求，等待评估演化 |
+| `30_迭代管理/` | 发版打包视图 |
+| `20_产品/CPxx_xxx/` | 长期运营的产品 |
+| `10_项目/XMxx_xxx/` | 有始有终的项目 |
+| `40_线上问题/` | 线上 issue 队列 |
+| `80_研究沉淀/` `81_知识库/` | 横切参考 |
+| `99_系统/` | 模板 / 规则 / 提示词 |
+
+## 产品内部结构
+
+`20_产品/CPxx_xxx/` 下：
+- folder note：`CPxx_xxx.md`（同名概览）
+- `00_会议纪要/`
+- `11_架构图/` `12_路线图/` `13_核心规则/` — 1X 架构层
+- `21_原始需求/` `22_需求卡片/` `23_原型管理/` `24_PRD管理/` `25_测试用例/` — 2X pipeline
+
+## 项目内部结构
+
+`10_项目/XMxx_xxx/` 下：
+- folder note：`XMxx_xxx.md`
+- `00_项目会议/` 高频入口
+- pipeline：`01_原始需求/ → 02_需求卡片/ → 03_业务建模/ → 04_方案设计/`
+- frontmatter 必填 `产品: "[[CPxx_xxx]]"`
+
+> **XM 不出 PRD / 原型 / 测试用例**。这些工件由所属产品 CPxx 的 `21~25` 承接。XM 第一阶段产出（业务建模 / 方案设计）验证完成后回流到 CP 的 1X 架构层。
+
+## 默认工作流
+
+1. **分流原始素材**：
+   - 历史 baseline → `00_基线资料/CPxx/...`
+   - 新想法 → `00_想法&诉求池/`
+   - 归属某产品 → `20_产品/CPxx/21_原始需求/`
+   - 归属某项目 → `10_项目/XMxx/01_原始需求/`
+   - 通用知识 → `81_知识库/`
+
+2. **想法演化**：从 `00_想法&诉求池/` 演化为项目 / 产品 / 消亡，原想法留指针标 `状态: 已转化`
+
+3. **工件流水线**：
+   - **产品级（CP）**：原始需求 → 需求卡片 → 原型管理 → PRD管理 → 测试用例（21 → 25）
+   - **项目级（XM）**：原始需求 → 需求卡片 → 业务建模 → 方案设计（01 → 04）
+   - XM 项目方案验证完成后，业务建模 / 方案设计成果回流到所属 CP 的 1X 架构层
+   - frontmatter 必填 `产品`，下游 wiki-link 回链上游
+
+## 命名规范
+
+- 产品编号：`CP{NN}`（永不复用）
+- 项目编号：`XM{NN}`（永不复用）
+
+## Folder Note 模式
+
+文件夹与其概览 .md **同名**：`CP01_xxx/CP01_xxx.md`
+
+frontmatter `aliases: [友好名, 编号]` 让 `[[友好名]]` `[[编号]]` 都解析到 folder note。
+
+## Frontmatter 约定
+
+```yaml
+---
+产品: "[[XX]]"             # 关联类字段必须用 [[wiki-link]]
+类型: 项目 / 产品 / 想法 / PRD / ...
+状态: 进行中 / 已完成 / ...
+---
+```
+
+frontmatter 后**不空行**。
+
+## Rules
+
+- 中文输出
+- 先结构化，再生成正文
+- 所有 PRD / 原型 / 测试 frontmatter 必填 `产品`，wiki-link 回链上游
+- 高风险结论显式标记 `**待人工确认**`
+- frontmatter 关联类字段一律 `[[wiki-link]]`
+- AI 起草 / 补全 / 提示风险；人决定范围 / 优先级 / 最终定稿

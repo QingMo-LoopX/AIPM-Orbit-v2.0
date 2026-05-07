@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Obsidian local state (per-user, shouldn't be shared)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/cache/
+.obsidian/types.json
+.obsidian/graph.json
+.obsidian/canvas.json
+
+# Obsidian trash
+.trash/
+
+# Claude Code local
+.claude/settings.local.json
+
+# Codex / 其他 agent 的本地凭证
+.codex/
+.cursor/
+
+# Windows / Linux noise
+Thumbs.db
+ehthumbs.db
+.Spotlight-V100
+.Trashes
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / Python（如未来加自动化脚本）
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Logs
+*.log

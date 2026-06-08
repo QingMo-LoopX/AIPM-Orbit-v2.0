@@ -65,10 +65,15 @@ For any AI agent (Codex / Cursor / general assistants) working within this Obsid
 
 - 产品编号：`CP{NN}`（永不复用）
 - 项目编号：`XM{NN}`（永不复用）
+- 文件名 / 文件夹名以**当前状态**结尾：
+  - 想法：`想法-NNN-主题-{评估中|已转化|已消亡}.md`
+  - 项目：`XMNN_主题_{进行中|已完成|...}/`（同名 .md 同步）
+  - 产品：`CPNN_主题_{未开始|研发中|已上线}/`（同名 .md 同步）
+  - 状态变更时同步改名 + 批量更新 wiki-link
 
 ## Folder Note 模式
 
-文件夹与其概览 .md **同名**：`CP01_xxx/CP01_xxx.md`
+文件夹与其概览 .md **同名**：`CP01_xxx_已上线/CP01_xxx_已上线.md`
 
 frontmatter `aliases: [友好名, 编号]` 让 `[[友好名]]` `[[编号]]` 都解析到 folder note。
 

@@ -74,12 +74,17 @@ Act as AI Product / Project Manager Copilot and Knowledge Manager. Build, organi
 - 产品编号：`CP{NN}`（如 `CP01`, `CP02` ...）
 - 项目编号：`XM{NN}`（如 `XM01`, `XM02` ...）
 - **编号永不复用**——即使消亡也保留编号，避免引用断裂
+- 文件名 / 文件夹名以**当前状态**结尾：
+  - 想法：`想法-NNN-主题-{评估中|已转化|已消亡}.md`
+  - 项目：`XMNN_主题_{进行中|已完成|...}/`（同名 .md 同步带后缀）
+  - 产品：`CPNN_主题_{未开始|研发中|已上线}/`（同名 .md 同步带后缀）
+  - 状态变更时**同步重命名**文件夹 + 同名 .md，并批量更新所有 wiki-link
 
 ## Folder Note 模式
 
 文件夹与其概览 .md **同名**：
-- `CP01_xxx/CP01_xxx.md`
-- `XM01_xxx/XM01_xxx.md`
+- `CP01_xxx_已上线/CP01_xxx_已上线.md`
+- `XM01_xxx_进行中/XM01_xxx_进行中.md`
 
 装 [Folder Notes 插件](https://github.com/LostPaul/obsidian-folder-notes) 后，点击文件夹直接打开概览。
 

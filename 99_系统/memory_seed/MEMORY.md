@@ -1,0 +1,19 @@
+- [写作风格偏好](feedback_writing_style.md) — 任何场合**禁用 §**（含对话回复）、不带"谁谁谁原话"考据、中文双引号用『』
+- [通用方法论与 vault 落地分离](feedback_methodology_vs_vault.md) — 问行业通行方法论时只给纯内容，不主动跟 AIPM vault 结构挂钩，用户说引入再引入
+- [正式交付文档不写元话语](feedback_no_meta_talk_in_deliverables.md) — 方案 / PRD / 画板里不写"读这份方案前"/"先对齐一个认知基线"/"本方案分X呈现"等导引语，直接进实质内容
+- [用户已下达明确指令不要重复确认](feedback_no_redundant_confirm.md) — 用户已明说『新增版本』『推 V4』『改成 X』时直接执行机械动作，不要再拎出来当『方案 A 请确认』
+- [问题分析先区分根因和表现](feedback_root_cause_vs_symptom.md) — 会议复盘 / 产研归因时先做因果分层，根因放主线，表现挂在根因下，不平铺；改进建议优先指向根因层
+- [方案设计文档归属与版本流程](feedback_scheme_doc_path_and_version.md) — 只要是『方案』（任何格式）一律放 XM 的 04_方案设计/，CP 的 24_PRD管理/ 只接 PRD；任何结构性改动必须主动推版本号，禁止累积原地改
+- [业务用户感知透明原则](feedback_business_user_perception.md) — 业务用户不查权限只感知能不能干活；方案 / 画板要区分『业务用户感知层 / 运营配置层 / 技术实现层』三层受众
+- [客观业务形态不用"选择"](feedback_fact_vs_choice_wording.md) — 描述客观存在的业务事实用"形态/事实/现状"，"选择/决定"只留给真决策
+- [业务画板设计偏好](feedback_canvas_design.md) — 画板要以业务方在系统里看到的菜单/视图为骨架 + 现状/未来对比，不要照搬方案文档内容
+- [图示配色规则](feedback_diagram_color_scheme.md) — 主数据分层节点统一 slate 色系，色彩差异只服务于真正不同的概念类
+- [列表操作列按钮全展示](feedback_list_operation_buttons.md) — 行操作按钮始终全部展示，不可用时禁用（灰化），不按行隐藏
+- [业务 key 字段系统自动生成](feedback_business_key_autogen.md) — 角色编号 / 组织编号 / 项目编号等业务 key 字段一律系统自动生成，表单新增 + 编辑两态都 disabled
+- [原型 UI 文案区分 UI 内部模式标签与版本变更说明徽章](feedback_no_dev_chrome_in_prototype.md) — 『编辑态/查看态』这种 UI 内部模式不做 UI；模式应该由 UI 可供性自表达
+- [原型 preset 状态必须做完整业务闭环](feedback_preset_state_closure.md) — 造预置状态时主字段 + 所有派生字段一起按业务流程闭环，不要等用户挑漏
+- [产品逻辑流程图绘制方法](feedback_product_flow_diagram_method.md) — 按「节点类型 × 要素槽位」模型绘制；主流程瘦 + 规则旁注 + 横切要素集中放
+- [Claude × Codex 非-coding 协作分工](feedback_claude_codex_division_pm.md) — Claude 管编排+vault 内容，Codex 管执行；派单必须三段式明示，禁止静默调用
+- [XM→CP 升级目录规则](feedback_xm_to_cp_migration.md) — CP 不开 03_业务建模 / 04_方案设计；XM 原地保留改名已转化，CP 反链 + 把稳定结论提炼到 1X 架构层
+- [XM 已转化后新文档放 CP 下](feedback_xm_to_cp_doc_placement.md) — XM_已转化 后新增过程协作 / 沟通 / 运营类文档默认放 CP，不在 XM 下继续加
+- [系统级升级方案定位 · 业务节点是场景而非驱动](feedback_system_upgrade_positioning.md) — 写权限/鉴权/组织等系统级方案时定位为系统整体升级；业务硬节点是验证场景之一，不绑死方案目的

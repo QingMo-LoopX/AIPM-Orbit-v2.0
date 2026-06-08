@@ -38,19 +38,16 @@ vault 内不嵌套 tenant 层级。本 vault 自身的 tenant 信息见 [00_AIPM
 ## 快速开始
 
 ```bash
-# 1. 用本 template 派生新 vault（任选一种）
-#    (a) 已 clone 到本地后：
-git clone https://github.com/<your-org>/AIPM-Orbit-template.git Yodian_AIPM-Orbit
-cd Yodian_AIPM-Orbit
-#    (b) 或在 GitHub UI 点 "Use this template" 创建新 repo 后再 clone
+# 1. 把 template 复制到新目录（用任何方式拿到本地副本即可）
+cp -R AIPM-Orbit-template/ <客户代号>_AIPM-Orbit/
+cd <客户代号>_AIPM-Orbit
 
 # 2. 跑初始化脚本（替换 tenant 占位符 + 删 INIT.md）
-./init-tenant.sh Yodian.tech
+./init-tenant.sh <客户名>
+# 例：./init-tenant.sh Yodian.tech
 
-# 3. 把目录移动到 Obsidian iCloud 路径
-mv ../Yodian_AIPM-Orbit "/Users/$(whoami)/Library/Mobile Documents/iCloud~md~obsidian/Documents/"
-
-# 4. 在 Obsidian 中 "Open another vault" 打开它
+# 3. 在 Obsidian 中 "Open another vault" 打开当前目录
+#    （路径由你决定。要让 Obsidian 跨设备同步，把目录放到对应云盘的 vault 父目录即可）
 ```
 
 ## 顶层结构（号段表）
@@ -132,6 +129,11 @@ XMxx_xxx.md             ← folder note
 - **产品编号**：`CP{NN}`（CP01, CP02, ...）
 - **项目编号**：`XM{NN}`（XM01, XM02, ...）
 - **编号永不复用** —— 即使消亡也保留编号，避免引用断裂
+- **文件名 / 文件夹名以当前状态结尾**：
+  - 想法：`想法-NNN-主题-{评估中|已转化|已消亡}.md`
+  - 项目：`XMNN_主题_{进行中|已完成|...}/`（同名 .md 同步）
+  - 产品：`CPNN_主题_{未开始|研发中|已上线}/`（同名 .md 同步）
+  - 状态变更时同步重命名 + 批量更新 wiki-link
 
 ## 文档约定
 
@@ -151,8 +153,8 @@ frontmatter 后**不空行**。
 ### Folder Note 模式
 
 文件夹和它的概览 .md 文件**同名**：
-- `CP01_xxx/CP01_xxx.md`
-- `XM01_xxx/XM01_xxx.md`
+- `CP01_xxx_已上线/CP01_xxx_已上线.md`
+- `XM01_xxx_进行中/XM01_xxx_进行中.md`
 
 装 [Folder Notes 插件](https://github.com/LostPaul/obsidian-folder-notes) 后，**点击文件夹直接打开概览**。
 
@@ -209,5 +211,3 @@ AI Agent 在本 vault 的行为规则：
 ## License
 
 MIT — 由 [Yodian.tech](https://yodian.tech) 维护，欢迎复制、改造、用于自己的客户工作台。
-
-如果这套框架帮到你了，欢迎在 GitHub Star / Fork，或在使用时保留对 Yodian.tech 的提及。

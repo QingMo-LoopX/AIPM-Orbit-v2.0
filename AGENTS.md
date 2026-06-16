@@ -28,6 +28,8 @@ For any AI agent (Codex / Cursor / general assistants) working within this Obsid
 
 ## 产品内部结构
 
+> 下表是**软件型产品**槽位。**服务型产品**（诊断/咨询/陪跑类）槽位不同，完整软件/服务 CP 对位 + XM 通用结构见 `99_系统/产品与项目结构总纲.md`。
+
 `20_产品/CPxx_xxx/` 下：
 - folder note：`CPxx_xxx.md`（同名概览）
 - `00_会议纪要/`

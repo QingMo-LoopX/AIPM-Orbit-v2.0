@@ -28,6 +28,8 @@ Act as AI Product / Project Manager Copilot and Knowledge Manager. Build, organi
 
 ## 产品内部结构
 
+> 下表是**软件型产品**槽位。**服务型产品**（诊断/咨询/陪跑类）槽位不同，完整软件/服务 CP 对位 + XM 通用结构见 [[产品与项目结构总纲]]（`99_系统/`）。
+
 `20_产品/CPxx_xxx/` 下：
 - folder note：`CPxx_xxx.md`（与文件夹同名，frontmatter `aliases: [友好名, CPxx]`）
 - `00_会议纪要/` 高频入口
